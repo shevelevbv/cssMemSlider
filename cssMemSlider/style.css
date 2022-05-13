@@ -3,22 +3,31 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-main {
-  width: 100%;
-  height: 100vh;
+body {
   background-color: #25282a;
 }
 
-input:hover {
-  cursor: pointer;
+main {
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+input[type='radio'] {
+  display: none;
 }
 
 label {
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
+  display: block;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 p {
@@ -26,40 +35,47 @@ p {
   display: none;
 }
 
-.control {
-  appearance: none;
-  width: 20px;
-  height: 20px;
+.button--container {
+  display: flex;
+}
+
+.button {
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
-  border: 2px solid #75abfa;
+  border: 1px solid #75abfa;
   background-color: #75abfa;
 }
 
-.control:hover {
+
+  .button:hover,
+  label:hover .button {
   border-color: white;
   background-color: white;
-}
+  }
 
-.control:checked {
+
+#control1:checked ~ .button--container #label1 .button,
+#control2:checked ~ .button--container #label2 .button,
+#control3:checked ~ .button--container #label3 .button,
+#control4:checked ~ .button--container #label4 .button {
   background-color: transparent;
 }
 
-.control:checked:hover {
+#control1:checked ~ .button--container #label1:hover .button,
+#control2:checked ~ .button--container #label2:hover .button,
+#control3:checked ~ .button--container #label3:hover .button,
+#control4:checked ~ .button--container #label4:hover .button {
   border-color: white;
 }
 
-#control1:checked ~ .title > p:nth-child(1) {
-  display: block;
-}
-
-#control2:checked ~ .title > p:nth-child(2) {
-  display: block;
-}
-
-#control3:checked ~ .title > p:nth-child(3) {
-  display: block;
-}
-
+#control1:checked ~ .title > p:nth-child(1),
+#control2:checked ~ .title > p:nth-child(2),
+#control3:checked ~ .title > p:nth-child(3),
 #control4:checked ~ .title > p:nth-child(4) {
   display: block;
 }
+
+
+
+
