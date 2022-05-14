@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Lato;
+  src: url('./fonts/Lato/Lato-Regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +13,19 @@
 
 body {
   background-color: #25282a;
+  font-family: Lato, sans-serif;
 }
 
 main {
-  width: 90%;
+  width: 100%;
   height: 100vh;
-  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 input[type='radio'] {
@@ -22,8 +34,8 @@ input[type='radio'] {
 
 label {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,10 +45,21 @@ label {
 p {
   color: white;
   display: none;
+  transform: translateX(2rem);
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  row-gap: 2rem;
 }
 
 .button--container {
   display: flex;
+  justify-content: end;
+  grid-area: 2 / 2 / 2 / 3;
 }
 
 .button {
@@ -47,13 +70,11 @@ p {
   background-color: #75abfa;
 }
 
-
-  .button:hover,
+.button:hover,
   label:hover .button {
   border-color: white;
   background-color: white;
-  }
-
+}
 
 #control1:checked ~ .button--container #label1 .button,
 #control2:checked ~ .button--container #label2 .button,
@@ -69,12 +90,45 @@ p {
   border-color: white;
 }
 
+.title {
+  grid-area: 2 / 1 / 2 / 2;
+}
+
 #control1:checked ~ .title > p:nth-child(1),
 #control2:checked ~ .title > p:nth-child(2),
 #control3:checked ~ .title > p:nth-child(3),
 #control4:checked ~ .title > p:nth-child(4) {
   display: block;
+  transform: translateX(0);
 }
+
+.image--container {
+  width: 100%;
+  height: calc((100vw)*0.4);
+  grid-area: 1 / 1 / 1 / span 3;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+}
+
+.image {
+  display: none;
+  opacity: 0;
+}
+
+#control1:checked ~ .image--container > .image:nth-child(1),
+#control2:checked ~ .image--container > .image:nth-child(2),
+#control3:checked ~ .image--container > .image:nth-child(3),
+#control4:checked ~ .image--container > .image:nth-child(4) {
+  display: block;
+  opacity: 1;
+}
+
+
+
+
 
 
 
