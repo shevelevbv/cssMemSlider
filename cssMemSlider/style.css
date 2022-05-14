@@ -25,6 +25,8 @@ main {
 img {
   width: 100%;
   height: 100%;
+  transform: translateX(100%);
+  transition-delay: 0.5s;
 }
 
 input[type='radio'] {
@@ -101,29 +103,30 @@ p {
   transform: translateX(0);
 }
 
-.image--container {
+.image {
   width: 100%;
-  height: calc(45vw);
+  height: 45vw;
   grid-area: 1 / 1 / 1 / span 3;
+  background-color: transparent;
   border-radius: 0.625em;
   overflow: hidden;
+  z-index: 0;
 }
 
-.image {
-  width: 100%;
+#control1:checked + .image,
+#control2:checked + .image,
+#control3:checked + .image,
+#control4:checked + .image {
+  z-index: 1;
 }
 
-.image {
-  display: none;
-  opacity: 0;
-}
-
-#control1:checked ~ .image--container > .image:nth-child(1),
-#control2:checked ~ .image--container > .image:nth-child(2),
-#control3:checked ~ .image--container > .image:nth-child(3),
-#control4:checked ~ .image--container > .image:nth-child(4) {
-  display: block;
-  opacity: 1;
+#control1:checked + .image > img,
+#control2:checked + .image > img,
+#control3:checked + .image > img,
+#control4:checked + .image > img {
+  transform: translateX(0);
+  transition-delay: 0s;
+  transition-duration: 0.5s;
 }
 
 
