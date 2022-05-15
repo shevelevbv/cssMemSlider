@@ -45,14 +45,14 @@ label {
 
 p {
   color: white;
-  display: none;
-  transform: translateX(2rem);
 }
 
 .wrapper {
   width: 80%;
   margin: 0 auto;
   display: grid;
+  grid-template-areas: "image image"
+                       "description controls";
   grid-template-columns: 3fr 1fr;
   row-gap: 2rem;
 }
@@ -60,7 +60,7 @@ p {
 .button--container {
   display: flex;
   justify-content: end;
-  grid-area: 2 / 2 / 2 / 3;
+  grid-area: controls;
 }
 
 .button {
@@ -72,7 +72,7 @@ p {
 }
 
 .button:hover,
-  label:hover .button {
+label:hover .button {
   border-color: white;
   background-color: white;
 }
@@ -91,23 +91,10 @@ p {
   border-color: white;
 }
 
-.title {
-  grid-area: 2 / 1 / 2 / 2;
-}
-
-#control1:checked ~ .title > p:nth-child(1),
-#control2:checked ~ .title > p:nth-child(2),
-#control3:checked ~ .title > p:nth-child(3),
-#control4:checked ~ .title > p:nth-child(4) {
-  display: block;
-  transform: translateX(0);
-}
-
 .image {
   width: 100%;
   height: 45vw;
-  grid-area: 1 / 1 / 1 / span 3;
-  background-color: transparent;
+  grid-area: image;
   border-radius: 0.625em;
   overflow: hidden;
   z-index: 0;
@@ -129,6 +116,21 @@ p {
   transition-duration: 0.5s;
 }
 
+.description {
+  grid-area: description;
+  transform: translateY(3rem);
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+#control1:checked ~ #description1,
+#control2:checked ~ #description2,
+#control3:checked ~ #description3,
+#control4:checked ~ #description4 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.5s, opacity 0.5s;
+}
 
 
 
