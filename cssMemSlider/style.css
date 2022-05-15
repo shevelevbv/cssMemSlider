@@ -1,19 +1,19 @@
 @font-face {
-  font-family: Lato;
-  src: url('./fonts/Lato/Lato-Regular.ttf');
+  font-family: Italianno;
+  src: url('./fonts/Italianno/Italianno-Regular.ttf');
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background-color: #25282a;
-  font-family: Lato, sans-serif;
+  font-family: Italianno, sans-serif;
+  font-size: 32px;
 }
 
 main {
@@ -54,7 +54,7 @@ p {
   grid-template-areas: "image image"
                        "description controls";
   grid-template-columns: 3fr 1fr;
-  row-gap: 2rem;
+  row-gap: 6%;
 }
 
 .button--container {
@@ -69,12 +69,21 @@ p {
   border-radius: 50%;
   border: 1px solid #75abfa;
   background-color: #75abfa;
+  transition: all 0.3s;
 }
 
 .button:hover,
 label:hover .button {
   border-color: white;
   background-color: white;
+  transition: all 0.3s;
+}
+
+.button:active,
+label:active .button {
+  border-color: rgb(196, 194, 194);
+  background-color: rgb(196, 194, 194);
+  transition: all 0.3s;
 }
 
 #control1:checked ~ .button--container #label1 .button,
@@ -130,6 +139,19 @@ label:hover .button {
   opacity: 1;
   transform: translateY(0);
   transition: transform 0.5s, opacity 0.5s;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper {
+    grid-template-areas: "image"
+                        "controls"
+                        "description";
+    grid-template-columns: 1fr;
+  }
+
+  .button--container {
+    justify-content: center;
+  }
 }
 
 
