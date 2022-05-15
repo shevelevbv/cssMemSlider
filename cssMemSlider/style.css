@@ -13,7 +13,7 @@
 body {
   background-color: #25282a;
   font-family: Italianno, sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 main {
@@ -35,8 +35,8 @@ input[type='radio'] {
 
 label {
   display: block;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,8 +64,8 @@ p {
 }
 
 .button {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   border-radius: 50%;
   border: 1px solid #75abfa;
   background-color: #75abfa;
@@ -79,8 +79,8 @@ label:hover .button {
   transition: all 0.3s;
 }
 
-.button:active,
-label:active .button {
+.button:hover:active,
+label:hover .button:active {
   border-color: rgb(196, 194, 194);
   background-color: rgb(196, 194, 194);
   transition: all 0.3s;
@@ -142,6 +142,16 @@ label:active .button {
 }
 
 @media screen and (max-width: 767px) {
+
+  body {
+    font-size: 7vw;
+  }
+
+  label {
+    width: 2rem;
+    height: 2rem;
+  }
+
   .wrapper {
     grid-template-areas: "image"
                         "controls"
