@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Meme Slider</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/3-2-troll-face-meme-png_64x64.ico">
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <input
+          type="radio"
+          name="control"
+          id="control1"
+          class="control"
+          checked
+        />
+        <div class="image">
+          <img src="./images/6795377-funny-hd-wallpapers.jpg" alt="Gandalf is a cat" />
+        </div>
+        <input type="radio" name="control" id="control2" class="control" />
+        <div class="image">
+          <img src="./images/chemistry-science-new-thing-funny-wallpaper-preview.jpg" alt="Chemistry is awesome" />
+        </div>
+
+        <input type="radio" name="control" id="control3" class="control" />
+        <div class="image">
+          <img
+            src="./images/1132075.jpg"
+            alt="Learning frontend"
+          />
+        </div>
+        <input type="radio" name="control" id="control4" class="control" />
+        <div class="image">
+          <img src="./images/Cool-Funny-Backgrounds-for-Desktop.jpg" alt="Procrastination" />
+        </div>
+        <div class="button--container">
+          <label for="control1" id="label1">
+            <span class="button"></span>
+          </label>
+          <label for="control2" id="label2">
+            <span class="button"></span>
+          </label>
+          <label for="control3" id="label3">
+            <span class="button"></span>
+          </label>
+          <label for="control4" id="label4">
+            <span class="button"></span>
+          </label>
+        </div>
+        <p id="description1" class="description">If Gandalf were a cat</p>
+        <p id="description2" class="description">Chemistry is awesome</p>
+        <p id="description3" class="description">Learning frontend development</p>
+        <p id="description4" class="description">
+          We all procrastinate
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
